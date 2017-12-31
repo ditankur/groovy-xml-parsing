@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <books>
     <book>
-        <name show="true">Design Patterns in Java</name>
+        <name>Design Patterns in Java</name>
         <author>GOF</author>
         <version>14</version>
     </book>
     <book>
-        <name show="true">The fault in our stars</name>
-        <author>Unknown</author>
+        <name>Clean Code</name>
+        <author>Uncle Bob</author>
         <version>1</version>
     </book>
 </books>
