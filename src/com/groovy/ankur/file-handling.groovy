@@ -14,12 +14,12 @@ def fileToWrite = new File("../../../../books.csv")
 
 def books
 
-//The groovy write will automatically perform the file close operation.
-//There is no need to explicitly call the close() on file.
+//The file writer will automatically perform the file close operation.
+//There is no need to explicitly call close() on file.
 fileToWrite.withWriter {
 
     // listFiles() will give all files inside root folder but the filter operation
-    // below will pick only those files which start with 'books-' prefix.
+    // below will pick only those files which start with 'books-' prefix and are of type xml.
     // The writer then will write the contents of XML files to a CSV file called books,csv.
     folder.listFiles().findAll { file ->
         file.getName().startsWith("books-") &&
