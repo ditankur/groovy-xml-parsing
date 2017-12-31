@@ -1,12 +1,30 @@
 package com.groovy.ankur
 
+import java.nio.file.Files
+
 def COMMA_SEPARATOR = ","
 def NEW_LINE = "\n"
-def folder = new File("C:\\Users\\ankur\\IdeaProjects\\groovy-demos")
-def fileToWrite = new File("C:\\Users\\ankur\\IdeaProjects\\groovy-demos\\books.csv")
+
+// This will represent the root folder i.e 'groovy-demos'.
+// The script will search for XML files inside this folder.
+def folder = new File("../../../../")
+
+// The csv file will be created inside the root folder (groovy-demos)
+def fileToWrite = new File("../../../../books.csv")
+
 def books
+
+//The groovy write will automatically perform the file close operation.
+//There is no need to explicitly call the close() on file.
 fileToWrite.withWriter {
-    folder.listFiles().findAll { file -> file.getName().startsWith("books-") }.each { file ->
+
+    // listFiles() will give all files inside root folder but the filter operation
+    // below will pick only those files which start with 'books-' prefix.
+    // The writer then will write the contents of XML files to a CSV file called books,csv.
+    folder.listFiles().findAll { file ->
+        file.getName().startsWith("books-") &&
+                Files.probeContentType(file.toPath()).endsWith("xml")
+    }.each { file ->
         books = new XmlParser().parse(file)
         books.children().each { row ->
             it.append(COMMA_SEPARATOR)
@@ -19,7 +37,6 @@ fileToWrite.withWriter {
 
         }
     }
-
     println("Success")
 }
 
