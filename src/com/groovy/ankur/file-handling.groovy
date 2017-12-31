@@ -19,7 +19,10 @@ fileToWrite.withWriter {
 
         }
     }
+
+    println("Success")
 }
+
 
 
 
