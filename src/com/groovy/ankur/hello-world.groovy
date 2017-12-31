@@ -5,10 +5,8 @@ def NEW_LINE = "\n"
 def folder = new File("C:\\Users\\ankur\\IdeaProjects\\groovy-demos")
 def fileToWrite = new File("C:\\Users\\ankur\\IdeaProjects\\groovy-demos\\books.csv")
 def books
-println(folder.listFiles())
 fileToWrite.withWriter {
     folder.listFiles().findAll { file -> file.getName().startsWith("books-") }.each { file ->
-        println(file.getName())
         books = new XmlParser().parse(file)
         books.children().each { row ->
             it.append(COMMA_SEPARATOR)
