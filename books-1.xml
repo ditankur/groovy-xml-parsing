@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<books>
+    <book>
+        <name show="true">Book1</name>
+        <author>author1</author>
+        <version>2</version>
+    </book>
+    <book>
+        <name show="true">Book2</name>
+        <author>author2</author>
+        <version>4</version>
+    </book>
+</books>
