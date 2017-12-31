@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <books>
     <book>
-        <name show="true">Book1</name>
-        <author>author1</author>
+        <name show="true">Head First Java</name>
+        <author>Kathy Sierra</author>
         <version>2</version>
     </book>
     <book>
-        <name show="true">Book2</name>
-        <author>author2</author>
+        <name show="true">Effective Java</name>
+        <author>Joshua Bloch</author>
         <version>4</version>
     </book>
 </books>
