@@ -1,7 +1,5 @@
 package com.groovy.ankur
 
-import java.nio.file.Files
-
 def COMMA_SEPARATOR = ","
 def NEW_LINE = "\n"
 
@@ -22,8 +20,7 @@ fileToWrite.withWriter {
     // below will pick only those files which start with 'books-' prefix and are of type xml.
     // The writer then will write the contents of XML files to a CSV file called books,csv.
     folder.listFiles().findAll { file ->
-        file.getName().startsWith("books-") &&
-                Files.probeContentType(file.toPath()).endsWith("xml")
+        file.getName().startsWith("books-")
     }.each { file ->
         books = new XmlParser().parse(file)
         books.children().each { row ->
